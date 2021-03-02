@@ -4,25 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Graficos</title>
+    <title>Física de la velocidad</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <link rel="icon" type="image/png" href="/images/icon.png" />
+    <script type="module" src="scripts.js"></script>
 </head>
 <body>
+    <h1><b>Datos breves sobre la distancia de frenado</b></h1>
     <div id="padre">
         <div class="menuButtons container">
-            <h2 class="vehicle">Automovil</h2>
-            <button  name="hola" class="car" onclick="vehicleSelector(this.name)"> <i class="fas fa-car"></i></button>
-            <button name="" class="truck" onclick="vehicleSelector()"><i class="fas fa-truck-moving"></i></button>
-            <button name="" class="motorcycle" onclick="vehicleSelector()"><i class="fas fa-motorcycle"></i></button>
+            <button class="heart" onclick="vehicleSelector()"><i class="fas fa-heartbeat"></i></button>
+            <button class="car" onclick="vehicleSelector(this.name)"> <i class="fas fa-car"></i></button>
+            <button class="truck" onclick="vehicleSelector()"><i class="fas fa-truck-moving"></i></button>
+            <button class="motorcycle" onclick="vehicleSelector()"><i class="fas fa-motorcycle"></i></button>
         </div>
         <div id="grafico" class="graph container">
             <canvas id="chart"></canvas>
         </div>
     </div>
-    
-    <script src="https://kit.fontawesome.com/6f1bc8fc38.js" crossorigin="anonymous"></script> -->
-    <script type="module" src="scripts.js"></script>
+    <!-- <p>Daniela Alejandra Recalde</p> -->
+    <script src="https://kit.fontawesome.com/6f1bc8fc38.js" crossorigin="anonymous"></script>
 </body>
 </html>
