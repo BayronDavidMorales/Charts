@@ -1,0 +1,36 @@
+
+body {
+    background-color: #ededed;
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+}
+#padre .graph{
+    width: 90%;
+}
+#padre .menuButtons{
+    display: grid;
+    width: 10%;
+}
+
+#padre{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+button{
+    border: none;
+    font-size: 35px;
+    color:gray;
+}
+button:hover{
+    color:#5e6e77;
+    font-size: 45px;
+    animation-duration: 3s;
+}
+h2{
+    margin:auto;
+    color:#12619c;
+    padding-left: 1em;
+}
+

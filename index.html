@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graficos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+</head>
+<body>
+    <div id="padre">
+        <div class="menuButtons container">
+            <h2 class="vehicle">Automovil</h2>
+            <button  name="hola" class="car" onclick="vehicleSelector(this.name)"> <i class="fas fa-car"></i></button>
+            <button name="" class="truck" onclick="vehicleSelector()"><i class="fas fa-truck-moving"></i></button>
+            <button name="" class="motorcycle" onclick="vehicleSelector()"><i class="fas fa-motorcycle"></i></button>
+        </div>
+        <div id="grafico" class="graph container">
+            <canvas id="chart"></canvas>
+        </div>
+    </div>
+    
+    <script src="https://kit.fontawesome.com/6f1bc8fc38.js" crossorigin="anonymous"></script> -->
+    <script type="module" src="scripts.js"></script>
+</body>
+</html>
