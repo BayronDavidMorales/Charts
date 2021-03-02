@@ -2,27 +2,50 @@
             display: none;
         }
     
-        @media only screen and (orientation:portrait) {
-            #wrapper {
-                display: none;
-            }
-    
-            #aviso-movil-horizontal {
-                display: block;
-            }
-        }
-    
-        @media only screen and (orientation:landscape) {
-            #aviso-movil-horizontal {
-                display: none;
-            }
-        }
+@media only screen and (orientation:portrait) {
+    #wrapper {
+        display: none;
+    }
+    #aviso-movil-horizontal {
+        display: block;
+    }
+}
+@media only screen and (orientation:landscape) {
+    #aviso-movil-horizontal {
+        display: none;
+    }
+}
+/* ---------------------- */
+@keyframes rotate {from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}}
+@-webkit-keyframes rotate {from {-webkit-transform: rotate(0deg);}
+  to {-webkit-transform: rotate(360deg);}}
+.rotate{
+    position:relative;
+    left:-55px;
+    top:-35px; 
+    -webkit-animation: 3s rotate linear infinite;
+    animation: 3s rotate linear infinite;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+.phone{
+    font-size: 100px;
+    position:relative;
+}
+
+
+
 body {
     background-color: #ededed;
     padding: 0;
     margin: 0;
     font-family: 'system-ui';
   
+}
+.aviso{
+    text-align: center;
+    font-size: 30px;
 }
 #padre .graph{
     width: 90%;
