@@ -13,8 +13,9 @@
 </head>
 <body>
     <div id="aviso-movil-horizontal" class="aviso">
+            Tamaño de pantalla minimo: 635px x 635px
         <h1 class="texto">
-            Por favor, gira la pantalla para ver el contenido.
+            Si estas en un dispositivo movil, por favor, gira la pantalla para ver el contenido.
         </h1>
         <img class="fas fa-mobile-alt phone" src="" alt="">
         <img class="fas fa-undo rotate" src="" alt="">
@@ -24,6 +25,7 @@
     <h1><b>Datos breves sobre la distancia de frenado</b></h1>
     <div id="padre">
         <div class="menuButtons container">
+            <h3 class="subtitle">Seleccione una categoria</h3>
             <button class="heart" onclick="vehicleSelector()"><i class="fas fa-heartbeat"></i></button>
             <button class="car" onclick="vehicleSelector(this.name)"> <i class="fas fa-car"></i></button>
             <button class="truck" onclick="vehicleSelector()"><i class="fas fa-truck-moving"></i></button>
@@ -31,6 +33,9 @@
         </div>
         <div id="grafico" class="graph container">
             <canvas id="chart"></canvas>
+            <div class="instrucciones">
+                Toque los puntos de interseccion para obtener mas informacion
+            </div>
         </div>
     </div>
     </div>

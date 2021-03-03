@@ -413,7 +413,7 @@ heartButton.onclick = () => {
                     labels: posibilities.map(item => item.velocity),
                     datasets: [
                     {
-                        label: 'posibilidades de que un peatón sobreviva a un choque al aumentar la velocidad del impacto.',
+                        label: `posibilidades de que un peatón sobreviva a un choque al aumentar la velocidad del impacto.`,
                         borderColor: 'red',
                         data: posibilities.map(item => item.percent)
                     }]

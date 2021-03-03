@@ -31,7 +31,7 @@
     font-size: 30px;
     position:relative;
     left:-55px;
-    top:-50px; 
+    top:-47px; 
     -webkit-animation: 10s rotate linear infinite;
     animation: 10s rotate linear infinite;
     -webkit-transform-origin: 50% 50%;
@@ -55,6 +55,7 @@ body {
   
 }
 .aviso{
+    color: gray;
     text-align: center;
     margin: 1em;
 }
@@ -72,6 +73,7 @@ body {
     height:90%;
     display: flex;
     margin: 3em;
+    position:relative;
 }
 button{
     border: none;
@@ -98,6 +100,21 @@ h1{
     height: 10%;
     color:#034475;
 }
+.instrucciones{
+    text-align: center;    
+    color: gray;
+}
+.wrapper{
+    position:relative;
+
+}
+.subtitle{
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    color:gray;
+}
 
 @media only screen and (max-width:800px){
     #padre{
@@ -115,6 +132,10 @@ h1{
         width: 83%;
         margin-right: 50px;
 
+    }
+    .subtitle{
+        margin:auto;
+        top: -22px;
     }
 
 }
