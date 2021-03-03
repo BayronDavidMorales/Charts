@@ -4,6 +4,7 @@ const carButton = document.querySelector('.car');
 const truckButton = document.querySelector('.truck');
 const motorcycleButton = document.querySelector('.motorcycle');
 const heartButton = document.querySelector('.heart');
+carButton.style.color = '#12619c';
 
 
 var { reaccion, frenadoSeco, frenadoMojado} = data.car;
