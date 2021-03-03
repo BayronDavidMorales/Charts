@@ -432,7 +432,7 @@ heartButton.onclick = () => {
                                 min: 0,
                                 max: 100,
                                 callback: function (value) {
-                                    return value + "%"
+                                    return value + " %"
                                 }
                             },
                             scaleLabel: {
