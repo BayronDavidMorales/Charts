@@ -52,7 +52,7 @@ var grafica = new Chart(ctx, {
                 },
                 scaleLabel: {
                     display: true,
-                    labelString: 'Distancia (m)',
+                    labelString: 'Distancia ',
                     fontSize: 21,
                     fontColor: '#12619c'
                 }
@@ -60,7 +60,7 @@ var grafica = new Chart(ctx, {
             xAxes: [{
                 scaleLabel: {
                     display: true,
-                    labelString: 'Velocidad (km/h)',
+                    labelString: 'Velocidad ',
                     fontSize: 21,
                     fontColor: '#12619c'
                 }
@@ -149,7 +149,7 @@ carButton.onclick = () => {
                             },
                             scaleLabel: {
                                 display: true,
-                                labelString: 'Distancia (m)',
+                                labelString: 'Distancia',
                                 fontSize: 21,
                                 fontColor: '#12619c'
                             }
@@ -157,7 +157,7 @@ carButton.onclick = () => {
                         xAxes: [{
                             scaleLabel: {
                                 display: true,
-                                labelString: 'Velocidad (km/h)',
+                                labelString: 'Velocidad',
                                 fontSize: 21,
                                 fontColor: '#12619c'
                             }
@@ -248,7 +248,7 @@ truckButton.onclick      = () => {
                             },
                             scaleLabel: {
                                 display: true,
-                                labelString: 'Distancia (m)',
+                                labelString: 'Distancia ',
                                 fontSize: 21,
                                 fontColor: '#12619c'
                             }
@@ -256,7 +256,7 @@ truckButton.onclick      = () => {
                         xAxes: [{
                             scaleLabel: {
                                 display: true,
-                                labelString: 'Velocidad (km/h)',
+                                labelString: 'Velocidad ',
                                 fontSize: 21,
                                 fontColor: '#12619c'
                             }
@@ -348,7 +348,7 @@ motorcycleButton.onclick = () => {
                             },
                             scaleLabel: {
                                 display: true,
-                                labelString: 'Distancia (m)',
+                                labelString: 'Distancia ',
                                 fontSize: 21,
                                 fontColor: '#12619c'
                             }
@@ -356,7 +356,7 @@ motorcycleButton.onclick = () => {
                         xAxes: [{
                             scaleLabel: {
                                 display: true,
-                                labelString: 'Velocidad (km/h)',
+                                labelString: 'Velocidad ',
                                 fontSize: 21,
                                 fontColor: '#12619c'
                             }
@@ -437,7 +437,7 @@ heartButton.onclick = () => {
                             },
                             scaleLabel: {
                                 display: true,
-                                labelString: 'Porcentaje (%)',
+                                labelString: 'Porcentaje ',
                                 fontSize: 21,
                                 fontColor: '#12619c'
                             }
@@ -445,7 +445,7 @@ heartButton.onclick = () => {
                         xAxes: [{
                             scaleLabel: {
                                 display: true,
-                                labelString: 'Velocidad (km/h)',
+                                labelString: 'Velocidad ',
                                 fontSize: 21,
                                 fontColor: '#12619c'
                             }
