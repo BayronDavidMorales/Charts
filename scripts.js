@@ -228,6 +228,15 @@ var grafica = new Chart(ctx, {
         },
         layout: {
             padding: { right: 50 },
+            callbacks: {
+                beforeTitle: function (tooltipItems, data) {
+                    return 'Velocidad del vehiculo y distancia recorrida desde frenar hasta detenerse';
+                },
+                title: function (tooltipItem, data) {
+                    return "    velocidad: " + data.labels[tooltipItem[0].index];
+                },
+            
+            }
         },
         tooltips: {
             backgroundColor: '#0584f6',
