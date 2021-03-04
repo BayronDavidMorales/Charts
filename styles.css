@@ -103,6 +103,7 @@ h1{
     color:#034475;
 }
 .instrucciones{
+    padding-top: 10px;
     text-align: center;    
     color: gray;
 }

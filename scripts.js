@@ -84,15 +84,15 @@ var barChartData = {
 };
 
 
-window.graficaGlobal = new Chart(ctxGlobal, {
+var graficaGlobal = new Chart(ctxGlobal, {
     type: 'bar',
     data: barChartData,
     options: {
         title: {
             display: true,
-            text: '',
-            fontSize: 30,
-            padding: 30,
+            text: 'Datos generales',
+            fontSize: 25,
+            // padding: 30,
             fontColor: '#12619c'
         },
         responsive: true,
@@ -101,14 +101,14 @@ window.graficaGlobal = new Chart(ctxGlobal, {
         },
         legendCallback: function (graficaGlobal) {
             var text = [];
-            text.push('<div style=" font-size: 12px; right:0;"><br> Reaccion <br> Frenado en seco <br> Frenado en mojado</div>');
+            text.push('<div style=" font-size: 9px; right:0;"><br> Reaccion <br> Frenado en seco <br> Frenado en mojado</div>');
             let j=0;
             for (var i = 0; i < graficaGlobal.data.datasets.length; i++) {
                 if (i % 3 == 0) { 
                     text.push('<div>'); 
                     text.push('<div><b>' + titleLegend[j] + '</b></div>');
                 }
-                text.push('<div style="width: 30px; margin: auto; border-top: 1px solid gray; background-color:' + graficaGlobal.data.datasets[i].backgroundColor +'">ㅤ</div>');
+                text.push('<div style="width: 30px; height: 10px; margin: auto; border-top: 1px solid gray; background-color:' + graficaGlobal.data.datasets[i].backgroundColor +'">ㅤ</div>');
                 if (i % 3 == 2) { text.push('</div>'); j++}
             }
             return text.join("");
@@ -150,7 +150,8 @@ window.graficaGlobal = new Chart(ctxGlobal, {
                         labelString: 'Indice de supervivencia del peatón',
                         fontSize: 18,
                         fontColor: 'rgb(224, 87, 87)',
-                    }
+                    },
+                    gridLines: 'false'
                 },
         ]
         },
@@ -251,6 +252,9 @@ var grafica = new Chart(ctx, {
         },
     }})
 globalButton.onclick = () => {
+    graficaGlobal.update({
+        duration: 800,
+    });
     carButton.style.color = '#5e6e77';
     truckButton.style.color = '#5e6e77';
     motorcycleButton.style.color = '#5e6e77';
@@ -258,6 +262,13 @@ globalButton.onclick = () => {
     globalButton.style.color = '#12619c';
     hideGraph(0, 'graficoIndividual')
     hideGraph(1, 'graficoGlobal')
+
+    
+    grafica.update({
+        duration: 800,
+        easing: 'easeOutBack'
+
+    });
 
 }
 carButton.onclick = () => {
