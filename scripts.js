@@ -30,18 +30,11 @@ function hideGraph(n, id){ // n=0 => ocultar, n=1 => mostrar
 var barChartData = {
     labels: data.truck.reaccion.map(item => item.velocidad),
     datasets: [
-        {
-            label: 'Peaton',
-            type: 'line',
-            backgroundColor: 'red',
-            borderColor: "red",
-            data: data.survived.posibilities.map(item => item.metros)
-        },
     // car
     {   
         label: 'Reaccion',
         backgroundColor: "rgba(82,255,10,0.3)",
-        data: data.car.reaccion.map(item => item.metros)
+        data: data.car.reaccion.map(item => item.metros),
     }, {
         label: 'Frenado en seco',
             backgroundColor: "rgba(82,255,30,0.6)",
@@ -79,6 +72,14 @@ var barChartData = {
         backgroundColor: "rgba(255, 233, 0, 1)",
         data: data.motorcycle.frenadoMojado.map(item => item.metros)
     },   
+    // peaton
+    {
+        label: 'Peatón',
+        type: 'line',
+        borderColor: "rgb(224, 87, 87)",
+        data: data.survived.posibilities.map(item => item.percent),
+        yAxisID: "right-y-axis"
+    },
 ]
 };
 
@@ -89,7 +90,7 @@ window.graficaGlobal = new Chart(ctxGlobal, {
     options: {
         title: {
             display: true,
-            text: 'Automovil',
+            text: '',
             fontSize: 30,
             padding: 30,
             fontColor: '#12619c'
@@ -135,7 +136,35 @@ window.graficaGlobal = new Chart(ctxGlobal, {
                     fontSize: 21,
                     fontColor: '#12619c'
                     }
-            }]
+            }, {
+                    id: "right-y-axis",
+                    position: "right",
+                    ticks: {
+                        min: 0,
+                        callback: function (value) {
+                            return value + " %"
+                        }
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Indice de supervivencia del peatón',
+                        fontSize: 18,
+                        fontColor: 'rgb(224, 87, 87)',
+                    }
+                },
+        ]
+        },
+        elements: {
+            line: {
+                borderWidth: 1,
+                fill: 'false',
+            },
+            point:{
+                pointStyle: 'triangle'
+            }
+        },
+        tooltips:{
+            mode: 'x'
         }
     }
 });
@@ -222,18 +251,25 @@ var grafica = new Chart(ctx, {
         },
     }})
 globalButton.onclick = () => {
+    carButton.style.color = '#5e6e77';
+    truckButton.style.color = '#5e6e77';
+    motorcycleButton.style.color = '#5e6e77';
+    heartButton.style.color = '#f03e3e';
+    globalButton.style.color = '#12619c';
     hideGraph(0, 'graficoIndividual')
     hideGraph(1, 'graficoGlobal')
 
 }
-
 carButton.onclick = () => {
     hideGraph(0, 'graficoGlobal')
     hideGraph(1, 'graficoIndividual')
+
     carButton.style.color = '#12619c';
     truckButton.style.color = '#5e6e77';
     motorcycleButton.style.color = '#5e6e77';
     heartButton.style.color = '#eb617f';
+    globalButton.style.color = '#5e6e77';
+
     var { reaccion, frenadoSeco, frenadoMojado } = data.car;
 
     grafica.data = {
@@ -336,6 +372,7 @@ truckButton.onclick = () => {
     truckButton.style.color = '#12619c';
     motorcycleButton.style.color = '#5e6e77';
     heartButton.style.color = '#eb617f';
+    globalButton.style.color = '#5e6e77';
     var { reaccion, frenadoSeco, frenadoMojado } = data.truck;
     grafica.data = {
         labels: reaccion.map(item => item.velocidad),
@@ -438,6 +475,8 @@ motorcycleButton.onclick = () => {
     truckButton.style.color = '#5e6e77';
     motorcycleButton.style.color = '#12619c';
     heartButton.style.color = '#eb617f';
+    globalButton.style.color = '#5e6e77';
+
     var { reaccion, frenadoSeco, frenadoMojado } = data.motorcycle;
     grafica.data = {
         labels: reaccion.map(item => item.velocidad),
@@ -539,6 +578,8 @@ heartButton.onclick = () => {
     truckButton.style.color = '#5e6e77';
     motorcycleButton.style.color = '#5e6e77';
     heartButton.style.color = '#f03e3e';
+    globalButton.style.color = '#5e6e77';
+
     var { posibilities } = data.survived;
     grafica.data = {
         labels: posibilities.map(item => item.velocity),
@@ -613,7 +654,8 @@ heartButton.onclick = () => {
                 borderWidth: 4,
                 backgroundColor: 'white',
                 hoverRadius: 10,
-                hoverBorderWidth: 4
+                hoverBorderWidth: 4,
+                pointStyle: 'triangle'
             }
         },
     }
