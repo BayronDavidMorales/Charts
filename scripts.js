@@ -606,7 +606,7 @@ heartButton.onclick = () => {
     grafica.options = {
         title: {
             display: true,
-            text: 'Peaton',
+            text: 'Indice de supervivencia del peatón',
             fontSize: 30,
             padding: 30,
             fontColor: '#12619c'
@@ -622,7 +622,7 @@ heartButton.onclick = () => {
                 },
                 scaleLabel: {
                     display: true,
-                    labelString: 'Indice de supervivencia del peatón ',
+                    labelString: 'Probabilidad',
                     fontSize: 21,
                     fontColor: '#12619c'
                 }
