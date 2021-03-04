@@ -32,51 +32,52 @@ var barChartData = {
     datasets: [
     // car
     {   
-        label: 'Reaccion',
+        label: 'Reaccion en automovil',
         backgroundColor: "rgba(82,255,10,0.3)",
         data: data.car.reaccion.map(item => item.metros),
     }, {
-        label: 'Frenado en seco',
+            label: 'Frenado sobre seco en automovil',
             backgroundColor: "rgba(82,255,30,0.6)",
         data: data.car.frenadoSeco.map(item => item.metros)
     }, {
-        label: 'Frenado en mojado',
+            label: 'Frenado sobre mojado en automovil',
         backgroundColor: "rgba(82,255,10,1)",
         data: data.car.frenadoMojado.map(item => item.metros),
     },
     // truck
     {
-        label: 'Reaccion',
+        label: 'Reaccion en camion',
         backgroundColor: "rgba(255 ,5, 0,0.2)",
         data: data.truck.reaccion.map(item => item.metros)
     }, {
-        label: 'Frenado en seco',
+        label: 'Frenado sobre seco en camion',
         backgroundColor: "rgba(255,50,70,0.5)",
         data: data.truck.frenadoSeco.map(item => item.metros)
     }, {
-        label: 'Frenado en mojado',
+        label: 'Frenado sobre mojado en camion',
         backgroundColor: "rgb(255,5,19)",
         data: data.truck.frenadoMojado.map(item => item.metros)
     },
     // motorcycle
     {
-        label: 'Reaccion',
+        label: 'Reaccion en motocicleta',
         backgroundColor: "rgba(255, 233, 0, 0.3)",
         data: data.motorcycle.reaccion.map(item => item.metros)
     }, {
-        label: 'Frenado en seco',
+        label: 'Frenado sobre seco en motocicleta',
         backgroundColor: "rgba(255, 250, 38, 0.6)",
         data: data.motorcycle.frenadoSeco.map(item => item.metros)
     }, {
-        label: 'Frenado en mojado',
+        label: 'Frenado sobre mojado en motocicleta',
         backgroundColor: "rgba(255, 233, 0, 1)",
         data: data.motorcycle.frenadoMojado.map(item => item.metros)
     },   
     // peaton
     {
-        label: 'Peatón',
+        label: 'Posiblidad de que un peatón sobreviva al golpe',
         type: 'line',
         borderColor: "rgb(224, 87, 87)",
+        backgroundColor: "rgb(224, 87, 87)",
         data: data.survived.posibilities.map(item => item.percent),
         yAxisID: "right-y-axis"
     },
@@ -101,7 +102,7 @@ var graficaGlobal = new Chart(ctxGlobal, {
         },
         legendCallback: function (graficaGlobal) {
             var text = [];
-            text.push('<div style=" font-size: 9px; right:0;"><br> Reaccion <br> Frenado en seco <br> Frenado en mojado</div>');
+            text.push('<div style=" font-size: 9px; right:0;"><br> Reaccion <br> Frenado sobre seco <br> Frenado sobre mojado</div>');
             let j=0;
             for (var i = 0; i < graficaGlobal.data.datasets.length; i++) {
                 if (i % 3 == 0) { 
@@ -292,12 +293,12 @@ carButton.onclick = () => {
                 data: reaccion.map(item => item.metros)
             },
             {
-                label: 'Frenado en seco',
-                borderColor: 'green',
+                label: 'Frenado sobre seco',
+                borderColor: "rgb(82,255,10)",
                 data: frenadoSeco.map(item => item.metros)
             },
             {
-                label: 'Frenado en mojado',
+                label: 'Frenado sobre mojado',
                 borderColor: 'yellow',
                 data: frenadoMojado.map(item => item.metros)
             }]
@@ -394,12 +395,12 @@ truckButton.onclick = () => {
                 data: reaccion.map(item => item.metros)
             },
             {
-                label: 'Frenado en seco',
-                borderColor: 'green',
+                label: 'Frenado sobre seco',
+                borderColor: "rgb(82,255,10)",
                 data: frenadoSeco.map(item => item.metros)
             },
             {
-                label: 'Frenado en mojado',
+                label: 'Frenado sobre mojado',
                 borderColor: 'yellow',
                 data: frenadoMojado.map(item => item.metros)
             }]
@@ -498,12 +499,12 @@ motorcycleButton.onclick = () => {
                 data: reaccion.map(item => item.metros)
             },
             {
-                label: 'Frenado en seco',
-                borderColor: 'green',
+                label: 'Frenado sobre seco',
+                borderColor: "rgb(82,255,10)",
                 data: frenadoSeco.map(item => item.metros)
             },
             {
-                label: 'Frenado en mojado',
+                label: 'Frenado sobre mojado',
                 borderColor: 'yellow',
                 data: frenadoMojado.map(item => item.metros)
             }]
@@ -598,6 +599,7 @@ heartButton.onclick = () => {
             {
                 label: `Probabilidad de que un peatón sobreviva a un choque`,
                 borderColor: 'red',
+                backgroundColor: "rgba(255,50,70,0.2)",
                 data: posibilities.map(item => item.percent)
             }]
     }
