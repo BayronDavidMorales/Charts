@@ -622,7 +622,7 @@ heartButton.onclick = () => {
                 },
                 scaleLabel: {
                     display: true,
-                    labelString: 'Probabilidad ',
+                    labelString: 'Indice de supervivencia del peatón ',
                     fontSize: 21,
                     fontColor: '#12619c'
                 }
