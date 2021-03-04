@@ -166,7 +166,7 @@ var graficaGlobal = new Chart(ctxGlobal, {
                 pointStyle: 'triangle'
             }
         },
-        tooltips: {
+        tooltips:{
             mode: 'x',
             callbacks: {
                 beforeTitle: function (tooltipItems, data) {
@@ -175,11 +175,8 @@ var graficaGlobal = new Chart(ctxGlobal, {
                 title: function (tooltipItem, data) {
                     return "    velocidad: " + data.labels[tooltipItem[0].index];
                 },
-
+            
             }
-        },
-        animation: {
-            duration: 3500,
         }
     }
 });
@@ -241,7 +238,6 @@ var grafica = new Chart(ctx, {
         },
         layout: {
             padding: { right: 50 },
-
         },
         tooltips: {
             backgroundColor: '#0584f6',
