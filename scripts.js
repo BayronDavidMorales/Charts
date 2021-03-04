@@ -74,7 +74,7 @@ var barChartData = {
     },   
     // peaton
     {
-        label: 'Probabilidad de que un peatón sobreviva al golpe',
+        label: 'Posiblidad de que un peatón sobreviva al golpe',
         type: 'line',
         borderColor: "rgb(224, 87, 87)",
         backgroundColor: "rgb(224, 87, 87)",
@@ -145,13 +145,13 @@ var graficaGlobal = new Chart(ctxGlobal, {
                         callback: function (value) {
                             return value + " %"
                         }
-                        },
+                    },
                     scaleLabel: {
                         display: true,
                         labelString: 'Indice de supervivencia del peatón',
-                        fontSize: 15,
+                        fontSize: 18,
                         fontColor: 'rgb(224, 87, 87)',
-                        },
+                    },
                     gridLines: 'false'
                 },
         ]
@@ -166,19 +166,7 @@ var graficaGlobal = new Chart(ctxGlobal, {
             }
         },
         tooltips:{
-            mode: 'x',
-            callbacks: {
-                beforeTitle: function (tooltipItems, data) {
-                    return 'Velocidad del vehiculo y distancia recorrida desde el frenado hasta detenerse';
-                },
-                title: function (tooltipItem, data) {
-                    return "    velocidad: " + data.labels[tooltipItem[0].index];
-                },
-            
-            }
-        },
-        layout: {
-            padding: { left: 10 },
+            mode: 'x'
         }
     }
 });
@@ -330,8 +318,7 @@ carButton.onclick = () => {
                     max: 100,
                     callback: function (value) {
                         return value + " m"
-                    },
-                    padding: '10px',
+                    }
                 },
                 scaleLabel: {
                     display: true,
@@ -610,7 +597,7 @@ heartButton.onclick = () => {
         labels: posibilities.map(item => item.velocity),
         datasets: [
             {
-                label: `Probabilidad de que el peatón sobreviva al golpe`,
+                label: `Probabilidad de que un peatón sobreviva a un choque`,
                 borderColor: 'red',
                 backgroundColor: "rgba(255,50,70,0.2)",
                 data: posibilities.map(item => item.percent)
