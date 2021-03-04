@@ -117,16 +117,15 @@ h1{
     color:gray;
 }
 .legend{
-    display: none;
     font-size: 11px;
-    padding-bottom: 15px;
-    width: 100%;
-    /* display: flex; */
+    width: 50%;
+    display: flex;
     justify-content: space-around;
     margin:auto;
     color: #034475;
     border: 1px dashed rgb(216, 215, 215);
 }
+
 
 @media only screen and (max-width:800px){
     #padre{

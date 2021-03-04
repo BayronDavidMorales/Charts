@@ -10,7 +10,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
     <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaqD4te4NK96T2NlpfQ2wth4jthaEQNhgCGQ&usqp=CAU" />
     <script type="module" src="scripts.js"></script>
-    <!-- <script type="module" src="mixed.js"></script> -->
 </head>
 <body>
     <div id="aviso-movil-horizontal" class="aviso">
@@ -33,9 +32,15 @@
             <button class="truck" onclick="vehicleSelector()" title="Mostrar grafica de camion"><i class="fas fa-truck-moving"></i></button>
             <button class="motorcycle" onclick="vehicleSelector()" title="Mostrar grafica de motocicleta"><i class="fas fa-motorcycle"></i></button>
         </div>
-        <div id="grafico" class="graph container">
-            <canvas id="chart"></canvas>
+        <div id="grafico" class="graph container graficoGlobal">
+            <canvas id="chartGlobal"></canvas>
             <div class="legend"></div>
+            <div class="instrucciones">
+                Toque los puntos de interseccion para obtener mas informacion
+            </div>
+        </div>
+        <div id="grafico" class="graph container graficoIndividual">
+            <canvas id="chart"></canvas>
             <div class="instrucciones">
                 Toque los puntos de interseccion para obtener mas informacion
             </div>
