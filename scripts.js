@@ -73,11 +73,11 @@ var barChartData = {
     datasets: [
         // car
         {
-            label: 'Reacción en automovil   ',
+            label: 'Reacción en automovil',
             backgroundColor: "rgba(82,255,10,0.3)",
             data: data.car.reaccion.map(item => item.metros),
         }, {
-            label: 'Frenado sobre seco en automovil   ',
+            label: 'Frenado sobre seco en automovil',
             backgroundColor: "rgba(82,255,30,0.6)",
             data: data.car.frenadoSeco.map(item => item.metros)
         }, {
@@ -87,11 +87,11 @@ var barChartData = {
         },
         // truck
         {
-            label: 'Reacción en camión       ',
+            label: 'Reacción en camión',
             backgroundColor: "rgba(255 ,5, 0,0.2)",
             data: data.truck.reaccion.map(item => item.metros)
         }, {
-            label: 'Frenado sobre seco en camión      ',
+            label: 'Frenado sobre seco en camión',
             backgroundColor: "rgba(255,50,70,0.5)",
             data: data.truck.frenadoSeco.map(item => item.metros)
         }, {
@@ -115,9 +115,9 @@ var barChartData = {
         },
         // peaton
         {
-            label: 'Probabilidad de que un peatón sobreviva al golpe',
+            label: 'Probabilidad de que un peatón sobreviva     .....',
             type: 'line',
-            // borderColor: "black)",
+            // borderColor: 'rgba(255, 0, 0, 0.3)',
             backgroundColor: "#293133",
             data: data.survived.posibilities.map(item => item.percent),
             yAxisID: "right-y-axis"
@@ -130,19 +130,23 @@ var graficaGlobal = new Chart(ctxGlobal, {
     type: 'bar',
     data: barChartData,
     options: {
+        // maintainAspectRatio: false,
+        responsive: true,
         title: {
             display: true,
             text: 'Datos generales',
             fontSize: 25,
             fontColor: '#12619c'
         },
-        // responsive: false,
         legend: {
             display: true,
             position: 'right',
             align: 'start',
-            usePointStyle: 'true',
-            rotation: '90'
+            rotation: '90',
+            labels:{
+                usePointStyle: 'true',
+
+            }
         },
         scales: {
             xAxes: [{
@@ -187,6 +191,35 @@ var graficaGlobal = new Chart(ctxGlobal, {
                 gridLines: 'false'
             },
             ]
+        },
+        tooltips:{
+                backgroundColor: '#0584f6',
+                enabled: true,
+                mode: 'single',
+                callbacks: {
+                afterLabel: function (t, d) {
+                    var xLabel = d.datasets[t.datasetIndex].label;
+                    var yLabel = t.yLabel;
+                    // if line chart
+                        if (t.datasetIndex < 9) return "Velocidad y distancia recorrida por el vehículo desde frenar hasta detenerse";
+                    // if bar chart
+                    else return "En caso de siniestro vial";
+                },
+                
+                title: function (tooltipItem, data) {
+                    return "     v: " + data.labels[tooltipItem[0].index];
+                },
+                label: function (t, d) {
+                    var xLabel = d.datasets[t.datasetIndex].label;
+                    var yLabel = t.yLabel;
+                    // if line chart
+                    if (t.datasetIndex < 9) return xLabel + ': ' + yLabel + ' m';
+                    // if bar chart
+                    else return 'Probabilidad de que un peatón sobreviva al golpe: ' + yLabel + "%";
+                },
+                 
+                
+            }
         },
         elements: {
             line: {
@@ -272,7 +305,25 @@ var grafica = new Chart(ctx, {
             yPaddinf: 20,
             bodyFontSize: 15,
             bodySpacing: 10,
-            mode: 'x'
+            mode: 'x',
+            callbacks: {
+                beforeTitle: function (tooltipItem, data) {
+                    return "Velocidad y distancia recorrida por el vehículo desde frenar hasta detenerse"
+                },
+                title: function (tooltipItem, data) {
+                    return "" + data.labels[tooltipItem[0].index];
+                },
+                label: function (tooltipItem, data) {
+                    var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                    if (label) {
+                        label += ': ';
+                    }
+                    label += tooltipItem.yLabel + 'm'
+                    return label;
+                }
+
+            }
         },
         elements: {
             line: {
@@ -389,9 +440,15 @@ carButton.onclick = () => {
                 title: function (tooltipItem, data) {
                     return "" + data.labels[tooltipItem[0].index];
                 },
-                label: function (tooltipItems, tooltipItem, data) {
-                    return  " " + tooltipItems.yLabel + ' m';
-                },
+                label: function (tooltipItem, data) {
+                    var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                    if (label) {
+                        label += ': ';
+                    }
+                    label += tooltipItem.yLabel + 'm'
+                    return label;
+                }
                 
             }
         },
@@ -504,8 +561,14 @@ truckButton.onclick = () => {
                 title: function (tooltipItem, data) {
                     return "" + data.labels[tooltipItem[0].index];
                 },
-                label: function (tooltipItems, tooltipItem, data) {
-                    return " " + tooltipItems.yLabel + ' m';
+                label: function (tooltipItem, data) {
+                    var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                    if (label) {
+                        label += ': ';
+                    }
+                    label += tooltipItem.yLabel + 'm'
+                    return label;
                 }
             }
         },
@@ -621,8 +684,14 @@ motorcycleButton.onclick = () => {
                 title: function (tooltipItem, data) {
                     return "" + data.labels[tooltipItem[0].index];
                 },
-                label: function (tooltipItems, tooltipItem, data) {
-                    return " " + tooltipItems.yLabel + ' m';
+                label: function (tooltipItem, data) {
+                    var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                    if (label) {
+                        label += ': ';
+                    }
+                    label += tooltipItem.yLabel + 'm'
+                    return label;
                 }
             }
         },
@@ -726,11 +795,17 @@ heartButton.onclick = () => {
                 callbacks: {
                     
                     title: function (tooltipItem, data) {
-                        return "Probabilidad de que un peatón sobreviva al golpe" 
+                        return "En caso de siniestro vial" 
                     },
-                    label: function (tooltipItems, data) {
-                        return "    " + tooltipItems.yLabel + '%';
-                    },
+                    label: function (tooltipItem, data) {
+                        var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                        if (label) {
+                            label += ': ';
+                        }
+                        label += tooltipItem.yLabel + '%'
+                        return label;
+                    }
                     
                 }
         },

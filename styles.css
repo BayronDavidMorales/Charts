@@ -46,7 +46,7 @@
 
 body {
     background-color: #ededed;
-    padding-left:  3em;
+    padding-left:  10px;
     margin: 0;
     font-family: 'system-ui';
   
@@ -126,10 +126,14 @@ h1{
     color: #034475;
     border: 1px dashed rgb(216, 215, 215);
 }
-.graficoGlobal{
-        /* width: 90%; */
+/* .graficoGlobal{
+  /* position: relative; */
+  /* margin: auto; */
+  height: 65vh;
+  width: 50vw;
+} */
 
-}
+
 
 
 @media only screen and (max-width:800px){
@@ -155,3 +159,7 @@ h1{
     }
 
 }
+/* .{
+    color: #7e0227;
+
+} */
