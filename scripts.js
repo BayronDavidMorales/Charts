@@ -115,7 +115,7 @@ var barChartData = {
         },
         // peaton
         {
-            label: 'Probabilidad de que un peatón sobreviva     .....',
+            label: 'Peaton',
             type: 'line',
             // borderColor: 'rgba(255, 0, 0, 0.3)',
             backgroundColor: "#293133",
