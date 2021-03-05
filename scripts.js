@@ -27,16 +27,57 @@ function hideGraph(n, id) { // n=0 => ocultar, n=1 => mostrar
     }
 }
 
+function responsive(n){
+    switch (n) {
+        case 0:
+        document.querySelector('#padre').style.width = '100%';
+        document.querySelector('#padre').style.height = '90%';
+        document.querySelector('#padre').style.display = 'grid';
+        document.querySelector('#padre').style.margin = '3em';
+    
+        document.querySelector('.graph').style.width = '100%';
+    
+        document.querySelector('.menuButtons').style.display = 'flex';
+        document.querySelector('.menuButtons').style.justifyContent = 'center';
+        document.querySelector('.menuButtons').style.width = '100%';
+        document.querySelector('.menuButtons').style.marginLeft = '50px';
+    
+        document.querySelector('.subtitle').style.margin = 'auto';
+        document.querySelector('.subtitle').style.top = '-22px';
+        break
+
+        case 1:
+            document.querySelector('.graph').style={
+                width: '90%'
+            };
+            document.querySelector('.menuButtons').style = {
+                display: 'grid',
+                width: '10%',
+                marginRight: '50px'
+            };
+            document.querySelector('#padre').style = {
+                display: 'flex',
+                width: '90%',
+                marginRight: '50px',
+                marginLeft: '3em',
+                marginRight: '1em',
+                position: 'relative'
+            };
+            break;
+        default: responsive(0)
+    }
+}
+responsive(0);
 var barChartData = {
     labels: data.truck.reaccion.map(item => item.velocidad),
     datasets: [
         // car
         {
-            label: 'Reaccion en automovil',
+            label: 'reacción en automovil   ',
             backgroundColor: "rgba(82,255,10,0.3)",
             data: data.car.reaccion.map(item => item.metros),
         }, {
-            label: 'Frenado sobre seco en automovil',
+            label: 'Frenado sobre seco en automovil   ',
             backgroundColor: "rgba(82,255,30,0.6)",
             data: data.car.frenadoSeco.map(item => item.metros)
         }, {
@@ -46,21 +87,21 @@ var barChartData = {
         },
         // truck
         {
-            label: 'Reaccion en camion',
+            label: 'reacción en camión       ',
             backgroundColor: "rgba(255 ,5, 0,0.2)",
             data: data.truck.reaccion.map(item => item.metros)
         }, {
-            label: 'Frenado sobre seco en camion',
+            label: 'Frenado sobre seco en camión      ',
             backgroundColor: "rgba(255,50,70,0.5)",
             data: data.truck.frenadoSeco.map(item => item.metros)
         }, {
-            label: 'Frenado sobre mojado en camion',
+            label: 'Frenado sobre mojado en camión',
             backgroundColor: "rgb(255,5,19)",
             data: data.truck.frenadoMojado.map(item => item.metros)
         },
         // motorcycle
         {
-            label: 'Reaccion en motocicleta',
+            label: 'reacción en motocicleta',
             backgroundColor: "rgba(255, 233, 0, 0.3)",
             data: data.motorcycle.reaccion.map(item => item.metros)
         }, {
@@ -76,8 +117,8 @@ var barChartData = {
         {
             label: 'Posiblidad de que un peatón sobreviva al golpe',
             type: 'line',
-            borderColor: "rgb(224, 87, 87)",
-            backgroundColor: "rgb(224, 87, 87)",
+            borderColor: "black)",
+            backgroundColor: "#293133",
             data: data.survived.posibilities.map(item => item.percent),
             yAxisID: "right-y-axis"
         },
@@ -93,26 +134,15 @@ var graficaGlobal = new Chart(ctxGlobal, {
             display: true,
             text: 'Datos generales',
             fontSize: 25,
-            // padding: 30,
             fontColor: '#12619c'
         },
-        responsive: true,
+        // responsive: false,
         legend: {
-            display: false,
-        },
-        legendCallback: function (graficaGlobal) {
-            var text = [];
-            text.push('<div style=" font-size: 9px; right:0;"><br> Reaccion <br> Frenado sobre seco <br> Frenado sobre mojado</div>');
-            let j = 0;
-            for (var i = 0; i < graficaGlobal.data.datasets.length; i++) {
-                if (i % 3 == 0) {
-                    text.push('<div>');
-                    text.push('<div><b>' + titleLegend[j] + '</b></div>');
-                }
-                text.push('<div style="width: 30px; height: 10px; margin: auto; border-top: 1px solid gray; background-color:' + graficaGlobal.data.datasets[i].backgroundColor + '">ㅤ</div>');
-                if (i % 3 == 2) { text.push('</div>'); j++ }
-            }
-            return text.join("");
+            display: true,
+            position: 'right',
+            align: 'start',
+            usePointStyle: 'true',
+            rotation: '90'
         },
         scales: {
             xAxes: [{
@@ -151,7 +181,7 @@ var graficaGlobal = new Chart(ctxGlobal, {
                     display: true,
                     labelString: 'Indice de supervivencia del peatón',
                     fontSize: 18,
-                    fontColor: 'rgb(224, 87, 87)',
+                    fontColor: '#293133',
                 },
                 gridLines: 'false'
             },
@@ -159,28 +189,17 @@ var graficaGlobal = new Chart(ctxGlobal, {
         },
         elements: {
             line: {
-                borderWidth: 1,
-                fill: 'false',
+                borderWidth: 3,
+                fill: 'true',
             },
             point: {
                 pointStyle: 'triangle'
             }
         },
-        tooltips:{
-            mode: 'x',
-            callbacks: {
-                beforeTitle: function (tooltipItems, data) {
-                    return 'Velocidad del vehiculo y distancia recorrida desde frenar hasta detenerse';
-                },
-                title: function (tooltipItem, data) {
-                    return "    velocidad: " + data.labels[tooltipItem[0].index];
-                },
-            
-            }
-        }
+        
     }
 });
-document.querySelector('.legend').innerHTML = graficaGlobal.generateLegend();
+// document.querySelector('.legend').innerHTML = graficaGlobal.generateLegend();
 
 
 var grafica = new Chart(ctx, {
@@ -264,6 +283,8 @@ var grafica = new Chart(ctx, {
     }
 })
 globalButton.onclick = () => {
+    responsive(0);
+
     carButton.style.color = '#5e6e77';
     truckButton.style.color = '#5e6e77';
     motorcycleButton.style.color = '#5e6e77';
@@ -274,6 +295,7 @@ globalButton.onclick = () => {
 
 }
 carButton.onclick = () => {
+    responsive(1);
     hideGraph(0, 'graficoGlobal')
     hideGraph(1, 'graficoIndividual')
 
@@ -289,7 +311,7 @@ carButton.onclick = () => {
         labels: reaccion.map(item => item.velocidad),
         datasets: [
             {
-                label: 'Reaccion',
+                label: 'reacción',
                 borderColor: 'red',
                 data: reaccion.map(item => item.metros)
             },
@@ -356,7 +378,16 @@ carButton.onclick = () => {
             yPaddinf: 20,
             bodyFontSize: 15,
             bodySpacing: 10,
-            mode: 'x'
+            mode: 'x',
+            callbacks: {
+                title: function (tooltipItem, data) {
+                    return "" + data.labels[tooltipItem[0].index];
+                },
+                label: function (tooltipItems, data) {
+                    return tooltipItems.xLabel+ " " + tooltipItems.yLabel + ' €';
+                },
+                footer: function (tooltipItem, data) { return "..."; }
+            }
         },
         elements: {
             line: {
@@ -379,6 +410,7 @@ carButton.onclick = () => {
     });
 }
 truckButton.onclick = () => {
+    responsive(1);
     hideGraph(0, 'graficoGlobal')
     hideGraph(1, 'graficoIndividual')
     carButton.style.color = '#5e6e77';
@@ -391,7 +423,7 @@ truckButton.onclick = () => {
         labels: reaccion.map(item => item.velocidad),
         datasets: [
             {
-                label: 'Reaccion',
+                label: 'reacción',
                 borderColor: 'red',
                 data: reaccion.map(item => item.metros)
             },
@@ -482,6 +514,7 @@ truckButton.onclick = () => {
 
 }
 motorcycleButton.onclick = () => {
+    responsive(1);
     hideGraph(0, 'graficoGlobal')
     hideGraph(1, 'graficoIndividual')
     carButton.style.color = '#5e6e77';
@@ -495,7 +528,7 @@ motorcycleButton.onclick = () => {
         labels: reaccion.map(item => item.velocidad),
         datasets: [
             {
-                label: 'Reaccion',
+                label: 'reacción',
                 borderColor: 'red',
                 data: reaccion.map(item => item.metros)
             },
@@ -586,6 +619,7 @@ motorcycleButton.onclick = () => {
 
 }
 heartButton.onclick = () => {
+    responsive(1);
     carButton.style.color = '#5e6e77';
     truckButton.style.color = '#5e6e77';
     motorcycleButton.style.color = '#5e6e77';
@@ -599,7 +633,7 @@ heartButton.onclick = () => {
         labels: posibilities.map(item => item.velocity),
         datasets: [
             {
-                label: `Probabilidad de que un peatón sobreviva a un choque`,
+                label: `Probabilidad de que un peatón sobreviva al golpe`,
                 borderColor: 'red',
                 backgroundColor: "rgba(255,50,70,0.2)",
                 data: posibilities.map(item => item.percent)
@@ -632,7 +666,7 @@ heartButton.onclick = () => {
             xAxes: [{
                 scaleLabel: {
                     display: true,
-                    labelString: 'Velocidad del vehiculo',
+                    labelString: 'Velocidad del vehículo',
                     fontSize: 21,
                     fontColor: '#12619c'
                 }
@@ -657,12 +691,23 @@ heartButton.onclick = () => {
             yPaddinf: 20,
             bodyFontSize: 15,
             bodySpacing: 10,
-            mode: 'x'
+            mode: 'x',
+            
+                enabled: true,
+                mode: 'single',
+                callbacks: {
+                    title: function (tooltipItem, data) {
+                        return "Probabilidad de que un peatón sobreviva al golpe" 
+                    },
+                    label: function (tooltipItems, data) {
+                        return "    " + tooltipItems.yLabel + '%';
+                    },
+                    
+                }
         },
         elements: {
             line: {
                 borderWidth: 4,
-                // fill: false
             },
             point: {
                 radius: 6,

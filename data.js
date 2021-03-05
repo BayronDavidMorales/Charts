@@ -2,6 +2,10 @@ export default {
     car:{
         "reaccion": [
             {
+                "metros": 0,
+                "velocidad": "30 km/h"
+            },
+            {
                 "metros": 17,
                 "velocidad": "40 km/h"
             },
@@ -38,6 +42,10 @@ export default {
         ],
         "frenadoSeco": [
             {
+                "metros": 0,
+                "velocidad": "30 km/h"
+            },
+            {
                 "metros": 9,
                 "velocidad": "40 km/h"
             },
@@ -72,6 +80,10 @@ export default {
 
         ],
         "frenadoMojado": [
+            {
+                "metros": 0,
+                "velocidad": "30 km/h"
+            },
             {
                 "metros": 13,
                 "velocidad": "40 km/h"
@@ -110,6 +122,10 @@ export default {
     truck: {
         "reaccion": [
             {
+                "metros": 0,
+                "velocidad": "30 km/h"
+            },
+            {
                 "metros": 17,
                 "velocidad": "40 km/h"
             },
@@ -142,6 +158,10 @@ export default {
         ],
         "frenadoSeco": [
             {
+                "metros": 0,
+                "velocidad": "30 km/h"
+            },
+            {
                 "metros": 13,
                 "velocidad": "40 km/h"
             },
@@ -171,6 +191,10 @@ export default {
             }
         ],
         "frenadoMojado": [
+            {
+                "metros": 0,
+                "velocidad": "30 km/h"
+            },
             {
                 "metros": 18,
                 "velocidad": "40 km/h"
@@ -204,6 +228,10 @@ export default {
     motorcycle: {
         "reaccion": [
             {
+                "metros": 0,
+                "velocidad": "30 km/h"
+            },
+            {
                 "metros": 11,
                 "velocidad": "40 km/h"
             },
@@ -226,6 +254,10 @@ export default {
         ],
         "frenadoSeco": [
             {
+                "metros": 0,
+                "velocidad": "30 km/h"
+            },
+            {
                 "metros": 9,
                 "velocidad": "40 km/h"
             },
@@ -247,6 +279,10 @@ export default {
             }
         ],
         "frenadoMojado": [
+            {
+                "metros": 0,
+                "velocidad": "30 km/h"
+            },
             {
                 "metros": 18,
                 "velocidad": "40 km/h"

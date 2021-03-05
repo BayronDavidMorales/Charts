@@ -46,7 +46,7 @@
 
 body {
     background-color: #ededed;
-    padding: 0;
+    padding: 1em;
     margin: 0;
     font-family: 'system-ui';
   
@@ -125,6 +125,10 @@ h1{
     margin:auto;
     color: #034475;
     border: 1px dashed rgb(216, 215, 215);
+}
+.graficoGlobal{
+        /* width: 90%; */
+
 }
 
 
