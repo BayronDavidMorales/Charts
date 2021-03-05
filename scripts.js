@@ -115,9 +115,9 @@ var barChartData = {
         },
         // peaton
         {
-            label: 'Posiblidad de que un peatón sobreviva al golpe',
+            label: 'Probabilidad de que un peatón sobreviva al golpe',
             type: 'line',
-            borderColor: "black)",
+            // borderColor: "black)",
             backgroundColor: "#293133",
             data: data.survived.posibilities.map(item => item.percent),
             yAxisID: "right-y-axis"
@@ -189,11 +189,17 @@ var graficaGlobal = new Chart(ctxGlobal, {
         },
         elements: {
             line: {
-                borderWidth: 3,
+                borderWidth: 4,
                 fill: 'true',
             },
             point: {
-                pointStyle: 'triangle'
+                pointStyle: 'triangle',
+                radius: 6,
+                borderWidth: 5,
+                hoverRadius: 6,
+                hoverBackgroundColor: 'red',
+                hoverBorderColor: 'red',
+                hoverBorderWidth: 4
             }
         },
         
@@ -373,20 +379,19 @@ carButton.onclick = () => {
         },
         tooltips: {
             backgroundColor: '#0584f6',
-            titleFontSize: 20,
-            xPadding: 20,
-            yPaddinf: 20,
-            bodyFontSize: 15,
-            bodySpacing: 10,
+            titleFontSize: 15,
             mode: 'x',
             callbacks: {
+                beforeTitle: function (tooltipItem, data) {
+                    return "Velocidad y distancia recorrida por el vehículo desde frenar hasta detenerse"
+                },
                 title: function (tooltipItem, data) {
                     return "" + data.labels[tooltipItem[0].index];
                 },
-                label: function (tooltipItems, data) {
-                    return tooltipItems.xLabel+ " " + tooltipItems.yLabel + ' €';
+                label: function (tooltipItems, tooltipItem, data) {
+                    return  " " + tooltipItems.yLabel + ' m';
                 },
-                footer: function (tooltipItem, data) { return "..."; }
+                
             }
         },
         elements: {
@@ -485,12 +490,23 @@ truckButton.onclick = () => {
         },
         tooltips: {
             backgroundColor: '#0584f6',
-            titleFontSize: 20,
+            titleFontSize: 15,
             xPadding: 20,
             yPaddinf: 20,
             bodyFontSize: 15,
             bodySpacing: 10,
-            mode: 'x'
+            mode: 'x',
+            callbacks: {
+                beforeTitle: function (tooltipItem, data) {
+                    return "Velocidad y distancia recorrida por el vehículo desde frenar hasta detenerse"
+                },
+                title: function (tooltipItem, data) {
+                    return "" + data.labels[tooltipItem[0].index];
+                },
+                label: function (tooltipItems, tooltipItem, data) {
+                    return " " + tooltipItems.yLabel + ' m';
+                }
+            }
         },
         elements: {
             line: {
@@ -591,12 +607,23 @@ motorcycleButton.onclick = () => {
         },
         tooltips: {
             backgroundColor: '#0584f6',
-            titleFontSize: 20,
+            titleFontSize: 15,
             xPadding: 20,
             yPaddinf: 20,
             bodyFontSize: 15,
             bodySpacing: 10,
-            mode: 'x'
+            mode: 'x',
+            callbacks: {
+                beforeTitle: function (tooltipItem, data) {
+                    return "Velocidad y distancia recorrida por el vehículo desde frenar hasta detenerse"
+                },
+                title: function (tooltipItem, data) {
+                    return "" + data.labels[tooltipItem[0].index];
+                },
+                label: function (tooltipItems, tooltipItem, data) {
+                    return " " + tooltipItems.yLabel + ' m';
+                }
+            }
         },
         elements: {
             line: {
@@ -686,7 +713,7 @@ heartButton.onclick = () => {
         },
         tooltips: {
             backgroundColor: '#0584f6',
-            titleFontSize: 20,
+            titleFontSize: 15,
             xPadding: 20,
             yPaddinf: 20,
             bodyFontSize: 15,
@@ -696,6 +723,7 @@ heartButton.onclick = () => {
                 enabled: true,
                 mode: 'single',
                 callbacks: {
+                    
                     title: function (tooltipItem, data) {
                         return "Probabilidad de que un peatón sobreviva al golpe" 
                     },
