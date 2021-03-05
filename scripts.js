@@ -73,7 +73,7 @@ var barChartData = {
     datasets: [
         // car
         {
-            label: 'reacción en automovil   ',
+            label: 'Reacción en automovil   ',
             backgroundColor: "rgba(82,255,10,0.3)",
             data: data.car.reaccion.map(item => item.metros),
         }, {
@@ -87,7 +87,7 @@ var barChartData = {
         },
         // truck
         {
-            label: 'reacción en camión       ',
+            label: 'Reacción en camión       ',
             backgroundColor: "rgba(255 ,5, 0,0.2)",
             data: data.truck.reaccion.map(item => item.metros)
         }, {
@@ -101,7 +101,7 @@ var barChartData = {
         },
         // motorcycle
         {
-            label: 'reacción en motocicleta',
+            label: 'Reacción en motocicleta',
             backgroundColor: "rgba(255, 233, 0, 0.3)",
             data: data.motorcycle.reaccion.map(item => item.metros)
         }, {
@@ -174,7 +174,7 @@ var graficaGlobal = new Chart(ctxGlobal, {
                 ticks: {
                     min: 0,
                     callback: function (value) {
-                        return value + " %"
+                        return "  "+value + " %"
                     }
                 },
                 scaleLabel: {
@@ -182,6 +182,7 @@ var graficaGlobal = new Chart(ctxGlobal, {
                     labelString: 'Indice de supervivencia del peatón',
                     fontSize: 18,
                     fontColor: '#293133',
+                    
                 },
                 gridLines: 'false'
             },
@@ -317,7 +318,7 @@ carButton.onclick = () => {
         labels: reaccion.map(item => item.velocidad),
         datasets: [
             {
-                label: 'reacción',
+                label: 'Reacción',
                 borderColor: 'red',
                 data: reaccion.map(item => item.metros)
             },
@@ -428,7 +429,7 @@ truckButton.onclick = () => {
         labels: reaccion.map(item => item.velocidad),
         datasets: [
             {
-                label: 'reacción',
+                label: 'Reacción',
                 borderColor: 'red',
                 data: reaccion.map(item => item.metros)
             },
@@ -544,7 +545,7 @@ motorcycleButton.onclick = () => {
         labels: reaccion.map(item => item.velocidad),
         datasets: [
             {
-                label: 'reacción',
+                label: 'Reacción',
                 borderColor: 'red',
                 data: reaccion.map(item => item.metros)
             },
