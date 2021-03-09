@@ -117,7 +117,6 @@ var barChartData = {
         {
             label: 'Peaton',
             type: 'line',
-            // borderColor: 'rgba(255, 0, 0, 0.3)',
             backgroundColor: "#293133",
             data: data.survived.posibilities.map(item => item.percent),
             yAxisID: "right-y-axis"
