@@ -2,7 +2,7 @@ export default {
     car:{
         "reaccion": [
             {
-                "metros": 0,
+                "metros": 13,
                 "velocidad": "30 km/h"
             },
             {
@@ -42,7 +42,7 @@ export default {
         ],
         "frenadoSeco": [
             {
-                "metros": 0,
+                "metros": 4,
                 "velocidad": "30 km/h"
             },
             {
@@ -81,7 +81,7 @@ export default {
         ],
         "frenadoMojado": [
             {
-                "metros": 0,
+                "metros": 6,
                 "velocidad": "30 km/h"
             },
             {
@@ -122,7 +122,7 @@ export default {
     truck: {
         "reaccion": [
             {
-                "metros": 0,
+                "metros": 13,
                 "velocidad": "30 km/h"
             },
             {
@@ -158,7 +158,7 @@ export default {
         ],
         "frenadoSeco": [
             {
-                "metros": 0,
+                "metros": 6,
                 "velocidad": "30 km/h"
             },
             {
@@ -192,7 +192,7 @@ export default {
         ],
         "frenadoMojado": [
             {
-                "metros": 0,
+                "metros": 8,
                 "velocidad": "30 km/h"
             },
             {
@@ -228,7 +228,7 @@ export default {
     motorcycle: {
         "reaccion": [
             {
-                "metros": 0,
+                "metros": 8,
                 "velocidad": "30 km/h"
             },
             {
@@ -254,7 +254,7 @@ export default {
         ],
         "frenadoSeco": [
             {
-                "metros": 0,
+                "metros": 4,
                 "velocidad": "30 km/h"
             },
             {
@@ -280,7 +280,7 @@ export default {
         ],
         "frenadoMojado": [
             {
-                "metros": 0,
+                "metros": 8,
                 "velocidad": "30 km/h"
             },
             {

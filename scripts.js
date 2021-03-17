@@ -38,9 +38,12 @@ function responsive(n){
         document.querySelector('.graph').style.width = '100%';
     
         document.querySelector('.menuButtons').style.display = 'flex';
-        document.querySelector('.menuButtons').style.justifyContent = 'center';
-        document.querySelector('.menuButtons').style.width = '100%';
-        document.querySelector('.menuButtons').style.marginLeft = '50px';
+        document.querySelector('.menuButtons').style.position = 'fixed';
+        document.querySelector('.menuButtons').style.justifyContent = 'space-around';
+        document.querySelector('.menuButtons').style.width = '30%';
+        document.querySelector('.menuButtons').style.marginLeft = '20px';
+        document.querySelector('.menuButtons').style.marginTop = '-10px';
+        
     
         document.querySelector('.subtitle').style.margin = 'auto';
         document.querySelector('.subtitle').style.top = '-22px';
