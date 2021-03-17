@@ -43,6 +43,8 @@ function responsive(n){
         document.querySelector('.menuButtons').style.width = '30%';
         document.querySelector('.menuButtons').style.marginLeft = '20px';
         document.querySelector('.menuButtons').style.marginTop = '-10px';
+        document.querySelector('.menuButtons').style.transition= 'all 2s';
+
         
     
         document.querySelector('.subtitle').style.margin = 'auto';
@@ -56,7 +58,9 @@ function responsive(n){
             document.querySelector('.menuButtons').style = {
                 display: 'grid',
                 width: '10%',
-                marginRight: '50px'
+                marginRight: '50px',
+                transition: 'all 3s'
+
             };
             document.querySelector('#padre').style = {
                 display: 'flex',
