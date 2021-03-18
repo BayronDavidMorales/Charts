@@ -54,7 +54,11 @@ body {
 
 /* --------------------------------------- */
 
-
+.wrapper{
+    position:relative;
+    z-index: 0;
+}
+/* -------------------- */
 .title {
     padding: 0;
     margin: 0;
@@ -86,16 +90,23 @@ body {
 }
 button{
     border: none;
+    border-bottom: 1px solid rgb(212, 212, 212);
     font-size: 30px;
     color:gray;
     outline: none;
     transition:  all 0.5s;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+           
 
 }
 button:hover{
     color:#0491e2;
     font-size: 35px;
     cursor: pointer;
+    box-shadow:  inset 0px -1px 60px rgb(209, 209, 209),
+            0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+            0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11),
+            0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 32px rgba(0, 0, 0, 0.11);
 }
 .heart:hover{
     color:#f03e3e;
@@ -115,9 +126,7 @@ h1{
     text-align: center;    
     color: gray;
 }
-.wrapper{
-    position:relative;
-}
+
 .subtitle{
     position: absolute;
     padding: 0;
@@ -134,7 +143,13 @@ h1{
     color: #034475;
     border: 1px dashed rgb(216, 215, 215);
 }
-
+/* git */
+.git {
+    top: 0;
+    left: 0;
+    position: relative;
+    z-index: 100;
+}
 @media only screen and (max-width:800px){
     #padre{
         width: 100%;
@@ -158,7 +173,3 @@ h1{
     }
 
 }
-/* .{
-    color: #7e0227;
-
-} */

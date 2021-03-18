@@ -39,14 +39,12 @@ function responsive(n){
     
         document.querySelector('.menuButtons').style.display = 'flex';
         document.querySelector('.menuButtons').style.position = 'fixed';
-        document.querySelector('.menuButtons').style.justifyContent = 'space-around';
         document.querySelector('.menuButtons').style.width = '30%';
-        document.querySelector('.menuButtons').style.marginLeft = '20px';
+        document.querySelector('.menuButtons').style.marginLeft = '2rem';
         document.querySelector('.menuButtons').style.marginTop = '-10px';
         document.querySelector('.menuButtons').style.transition= 'all 2s';
-
         
-    
+
         document.querySelector('.subtitle').style.margin = 'auto';
         document.querySelector('.subtitle').style.top = '-22px';
         break
@@ -298,7 +296,10 @@ var grafica = new Chart(ctx, {
                 boxWidth: 15,
                 yPaddinf: 50,
                 fontFamily: 'system-ui',
-                fontColor: '#034475'
+                fontColor: '#034475',
+                usePointStyle: 'true',
+
+                
             }
         },
         layout: {
@@ -429,7 +430,8 @@ carButton.onclick = () => {
                 boxWidth: 15,
                 yPaddinf: 50,
                 fontFamily: 'system-ui',
-                fontColor: '#034475'
+                fontColor: '#034475',
+                usePointStyle: 'true',
             }
         },
         layout: {
@@ -546,7 +548,8 @@ truckButton.onclick = () => {
                 boxWidth: 15,
                 yPaddinf: 50,
                 fontFamily: 'system-ui',
-                fontColor: '#034475'
+                fontColor: '#034475',
+                usePointStyle: 'true',
             }
         },
         layout: {
@@ -669,7 +672,8 @@ motorcycleButton.onclick = () => {
                 boxWidth: 15,
                 yPaddinf: 50,
                 fontFamily: 'system-ui',
-                fontColor: '#034475'
+                fontColor: '#034475',
+                usePointStyle: 'true',
             }
         },
         layout: {
@@ -781,7 +785,8 @@ heartButton.onclick = () => {
                 boxWidth: 15,
                 yPaddinf: 50,
                 fontFamily: 'system-ui',
-                fontColor: '#034475'
+                fontColor: '#034475',
+                usePointStyle: 'true',
             }
         },
         layout: {
