@@ -65,11 +65,11 @@ body {
     margin: 0;
 }
 .aviso{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     color: gray;
     text-align: center;
     margin-top: 50px;
-    margin-left: 60px;
+    margin-left: 65px;
 
 }
 #padre .graph{
