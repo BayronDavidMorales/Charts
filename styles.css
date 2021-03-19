@@ -24,6 +24,7 @@ body {
     #aviso-movil-horizontal {
         display: none;
     }
+
 }
 /* ---------------------- */
 @keyframes rotate {from {transform: rotate(0deg);}
@@ -64,9 +65,12 @@ body {
     margin: 0;
 }
 .aviso{
+    border: 1px solid red;
     color: gray;
     text-align: center;
-    margin: 1em;
+    margin-top: 50px;
+    margin-left: 60px;
+
 }
 #padre .graph{
     /* margin-top: -0px; */
@@ -90,6 +94,7 @@ body {
 }
 button{
     border: none;
+    border-radius: 3px;
     border-bottom: 1px solid rgb(212, 212, 212);
     font-size: 30px;
     color:gray;
